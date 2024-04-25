@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="{919825d9-e009-49e2-8262-d94ce94edfba}" Name="Disable Windows Defender (Reg)" Description="RGVzYWJpbGl0YSBvIFdpbmRvd3MgRGVmZW5kZXIgcGVsbyByZWdpc3Rybw==" Version="1.8.9.0" RemoteCategory="0" ExecutionType="Local" PS3ObjectCount="0" VariableSuffix="10000">
+  <Object ID="{c2077760-f1da-407b-b28c-42577d5255be}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor.Model">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>828d0b37-4c1f-4ef3-bef7-52e37d0d89b6</d2p1:m_Item1>
+        <d2p1:m_Item2>b00d2b72-b144-4533-9d49-50f299e0d8de</d2p1:m_Item2>
+        <d2p1:m_Item3>PolicyExecutor.SetRegistryValue, PolicyExecutionEngine, Version=1.8.9.0, Culture=neutral, PublicKeyToken=null</d2p1:m_Item3>
+        <d2p1:m_Item4>Key</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Activity mc:Ignorable="sads sap" x:Class="Automation Manager" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>463,525</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Script" sap:VirtualizedContainerService.HintSize="423,485" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RegistryValueExists Key_ItemProp="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=1.8.9.0, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" Conditional="[RegistryValueExists_Conditional_0]" DisplayName="Registry Value Exists" sap:VirtualizedContainerService.HintSize="403,115" IgnoreErrors="False" Key="SOFTWARE\Policies\Microsoft\Windows Defender" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows Defender" Key_Item="{x:Null}" Moniker="828d0b37-4c1f-4ef3-bef7-52e37d0d89b6" Property="DisableAntiSpyware" Property_DisplayArg="DisableAntiSpyware" Property_Item="{x:Null}" Result="[RegistryValueExists_Result_1]" ScriptDirectory="Unused" TypeName="RegistryValueExists" m_bTextLinkChange="False" />
+        <p:SetRegistryValue Key_ItemProp="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=1.8.9.0, Culture=neutral, PublicKeyToken=null" BaseKey="DWord" DisplayName="Set Registry Value" sap:VirtualizedContainerService.HintSize="403,173" IgnoreErrors="False" Key="SOFTWARE\Policies\Microsoft\Windows Defender" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows Defender" Key_Item="{x:Null}" Moniker="b00d2b72-b144-4533-9d49-50f299e0d8de" PropertyName="DisableAntiSpyware" PropertyName_DisplayArg="DisableAntiSpyware" PropertyName_Item="{x:Null}" PropertyType="DWord" PropertyValue="1" PropertyValue_DisplayArg="1" PropertyValue_Item="{x:Null}" Result="[SetRegistryValue_Result_2]" ScriptDirectory="Unused" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional_0" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result_1" />
+        <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result_2" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
